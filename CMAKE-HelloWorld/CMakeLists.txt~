@@ -13,7 +13,6 @@ foreach(MYVAR IN LISTS VAR)
 endforeach(MYVAR)
 
 set(INDEX 0)
-
 set(SIZE 0)
 list(LENGTH VAR SIZE)
 
@@ -36,6 +35,31 @@ endfunction()
 set(ARG1 0)
 set(ARG2 1)
 
+message("Outside function: ARG1 ${ARG1}")
 MyFunc(${ARG1} ${ARG2})
+message("Outside Function: ARG1 ${ARG1}")
 
-message("outside function scope: ${ARG1}")
+message("MyMacro")
+
+macro(MyMacro ARG1) #access global value which is why it can set value inside macro
+	message("Inside MyMacro: ${ARG1}")
+	set(ARG1 -1)
+	message("Inside MyMacro: ${ARG1}")
+endmacro()
+
+message("Outside MyMacro: ${ARG1}")
+set(ARG1 100)
+MyMacro("${ARG1}")
+message("Outside MyMacro: ${ARG1}")
+
+message("MyMacro2")
+
+macro(MyMacro2 ARGS1)
+	message("Inside MyMacro2: ${ARGS1}")
+	set("${ARGS1}" -10)
+	message("Inside MyMacro2: ${ARGS1}")
+endmacro()
+
+message("Outisde MyMacro2: ${ARG1}")
+MyMacro2("${ARG1}")
+message("Outside MyMacro2: ${ARG1}")
