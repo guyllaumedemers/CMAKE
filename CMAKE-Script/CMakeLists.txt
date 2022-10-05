@@ -39,12 +39,12 @@ message("Outside function: ARG1 ${ARG1}")
 MyFunc(${ARG1} ${ARG2})
 message("Outside Function: ARG1 ${ARG1}")
 
-message("MyMacro")
+message("\nMyMacro")
 
 macro(MyMacro ARG1) #access global value which is why it can set value inside macro
-	message("Inside MyMacro: ${ARG1}")
+	message("\t Inside MyMacro: ${ARG1}")
 	set(ARG1 -1)
-	message("Inside MyMacro: ${ARG1}")
+	message("\t Inside MyMacro: ${ARG1}")
 endmacro()
 
 message("Outside MyMacro: ${ARG1}")
@@ -52,12 +52,12 @@ set(ARG1 100)
 MyMacro("${ARG1}")
 message("Outside MyMacro: ${ARG1}")
 
-message("MyMacro2")
+message("\nMyMacro2")
 
 macro(MyMacro2 ARGS1) #avoid macro... cannot set Args values inside macro and print the modified value. can ONLY update Args value if VERBOSE is EQUAL to the Args passed AND that this Args passed is global.
-	message("Inside MyMacro2: ${ARGS1}")
+	message("\t Inside MyMacro2: ${ARGS1}")
 	set("${ARGS1}" -10)
-	message("Inside MyMacro2: ${ARGS1}")
+	message("\t Inside MyMacro2: ${ARGS1}")
 endmacro()
 
 message("Outisde MyMacro2: ${ARG1}")
