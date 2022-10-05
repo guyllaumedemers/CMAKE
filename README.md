@@ -1,5 +1,5 @@
 # CMAKE
-Experimentation Repo used for learning basic script command in CMake.
+Experimental Repository used for learning basic script command in CMake.
 ``run cmake -P CMakeLists.txt``
 
 ### Resources
