@@ -9,9 +9,10 @@ project(
 
 set(PROJECT_STATIC_SRC_DIR "CMAKE-CarRental")
 
+include("${PROJECT_STATIC_SRC_DIR}/Car.cmake")
+
 add_executable(
 	${PROJECT_NAME}
 	Main.cpp
-	"${PROJECT_STATIC_SRC_DIR}/Car.cpp"
-	"${PROJECT_STATIC_SRC_DIR}/CarMaintenance.cpp"
+	${CAR_RENTAL}
 	)
