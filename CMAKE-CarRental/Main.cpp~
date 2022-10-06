@@ -1,7 +1,5 @@
 #include <iostream>
 
-int CheckNumberCarsAvailable();
-
 int main(int argc, char** argv)
 {
 	std::cout << CheckNumberCarsAvailable() << std::endl;

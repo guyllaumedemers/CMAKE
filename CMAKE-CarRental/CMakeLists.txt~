@@ -12,12 +12,9 @@ add_executable(
 	Main.cpp
 	)
 
-add_subdirectory(
-	CMAKE-CarRental
-	)
+add_subdirectory(CMAKE-CarRental)
 
 target_link_libraries(
 	${PROJECT_NAME}
-	PRIVATE
 	cars
 	)

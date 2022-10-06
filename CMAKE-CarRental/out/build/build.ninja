@@ -42,22 +42,13 @@ cmake_ninja_workdir = D$:/VisualStudio/CMAKE/CMAKE-CarRental/out/build/
 #############################################
 # Order-only phony target for CAR_RENTAL_TUTORIAL
 
-build cmake_object_order_depends_target_CAR_RENTAL_TUTORIAL: phony || CMakeFiles/CAR_RENTAL_TUTORIAL.dir
+build cmake_object_order_depends_target_CAR_RENTAL_TUTORIAL: phony || cmake_object_order_depends_target_cars
 
 build CMakeFiles/CAR_RENTAL_TUTORIAL.dir/Main.cpp.obj: CXX_COMPILER__CAR_RENTAL_TUTORIAL_ D$:/VisualStudio/CMAKE/CMAKE-CarRental/Main.cpp || cmake_object_order_depends_target_CAR_RENTAL_TUTORIAL
   DEP_FILE = CMakeFiles\CAR_RENTAL_TUTORIAL.dir\Main.cpp.obj.d
+  INCLUDES = -ID:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/.
   OBJECT_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir
   OBJECT_FILE_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir
-
-build CMakeFiles/CAR_RENTAL_TUTORIAL.dir/CMAKE-CarRental/Car.cpp.obj: CXX_COMPILER__CAR_RENTAL_TUTORIAL_ D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/Car.cpp || cmake_object_order_depends_target_CAR_RENTAL_TUTORIAL
-  DEP_FILE = CMakeFiles\CAR_RENTAL_TUTORIAL.dir\CMAKE-CarRental\Car.cpp.obj.d
-  OBJECT_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir
-  OBJECT_FILE_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir\CMAKE-CarRental
-
-build CMakeFiles/CAR_RENTAL_TUTORIAL.dir/CMAKE-CarRental/CarMaintenance.cpp.obj: CXX_COMPILER__CAR_RENTAL_TUTORIAL_ D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/CarMaintenance.cpp || cmake_object_order_depends_target_CAR_RENTAL_TUTORIAL
-  DEP_FILE = CMakeFiles\CAR_RENTAL_TUTORIAL.dir\CMAKE-CarRental\CarMaintenance.cpp.obj.d
-  OBJECT_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir
-  OBJECT_FILE_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir\CMAKE-CarRental
 
 
 # =============================================================================
@@ -67,7 +58,7 @@ build CMakeFiles/CAR_RENTAL_TUTORIAL.dir/CMAKE-CarRental/CarMaintenance.cpp.obj:
 #############################################
 # Link the executable CAR_RENTAL_TUTORIAL.exe
 
-build CAR_RENTAL_TUTORIAL.exe: CXX_EXECUTABLE_LINKER__CAR_RENTAL_TUTORIAL_ CMakeFiles/CAR_RENTAL_TUTORIAL.dir/Main.cpp.obj CMakeFiles/CAR_RENTAL_TUTORIAL.dir/CMAKE-CarRental/Car.cpp.obj CMakeFiles/CAR_RENTAL_TUTORIAL.dir/CMAKE-CarRental/CarMaintenance.cpp.obj
+build CAR_RENTAL_TUTORIAL.exe: CXX_EXECUTABLE_LINKER__CAR_RENTAL_TUTORIAL_ CMAKE-CarRental/CMakeFiles/cars.dir/Car.cpp.obj CMAKE-CarRental/CMakeFiles/cars.dir/CarMaintenance.cpp.obj CMakeFiles/CAR_RENTAL_TUTORIAL.dir/Main.cpp.obj || CMAKE-CarRental/cars
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\CAR_RENTAL_TUTORIAL.dir
   POST_BUILD = cd .
@@ -101,9 +92,68 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/VisualStudio/CMAKE/CMAKE-CarRental/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for OBJECT_LIBRARY target cars
+
+
+#############################################
+# Order-only phony target for cars
+
+build cmake_object_order_depends_target_cars: phony || CMAKE-CarRental/CMakeFiles/cars.dir
+
+build CMAKE-CarRental/CMakeFiles/cars.dir/Car.cpp.obj: CXX_COMPILER__cars_ D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/Car.cpp || cmake_object_order_depends_target_cars
+  DEP_FILE = CMAKE-CarRental\CMakeFiles\cars.dir\Car.cpp.obj.d
+  INCLUDES = -ID:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/.
+  OBJECT_DIR = CMAKE-CarRental\CMakeFiles\cars.dir
+  OBJECT_FILE_DIR = CMAKE-CarRental\CMakeFiles\cars.dir
+
+build CMAKE-CarRental/CMakeFiles/cars.dir/CarMaintenance.cpp.obj: CXX_COMPILER__cars_ D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/CarMaintenance.cpp || cmake_object_order_depends_target_cars
+  DEP_FILE = CMAKE-CarRental\CMakeFiles\cars.dir\CarMaintenance.cpp.obj.d
+  INCLUDES = -ID:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/.
+  OBJECT_DIR = CMAKE-CarRental\CMakeFiles\cars.dir
+  OBJECT_FILE_DIR = CMAKE-CarRental\CMakeFiles\cars.dir
+
+
+
+#############################################
+# Object library cars
+
+build CMAKE-CarRental/cars: phony CMAKE-CarRental/CMakeFiles/cars.dir/Car.cpp.obj CMAKE-CarRental/CMakeFiles/cars.dir/CarMaintenance.cpp.obj
+
+
+#############################################
+# Utility command for edit_cache
+
+build CMAKE-CarRental/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\VisualStudio\CMAKE\CMAKE-CarRental\out\build\CMAKE-CarRental && C:\msys64\mingw64\bin\ccmake.exe -SD:\VisualStudio\CMAKE\CMAKE-CarRental -BD:\VisualStudio\CMAKE\CMAKE-CarRental\out\build"
+  DESC = Running CMake cache editor...
+  pool = console
+  restat = 1
+
+build CMAKE-CarRental/edit_cache: phony CMAKE-CarRental/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMAKE-CarRental/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\VisualStudio\CMAKE\CMAKE-CarRental\out\build\CMAKE-CarRental && C:\msys64\mingw64\bin\cmake.exe --regenerate-during-build -SD:\VisualStudio\CMAKE\CMAKE-CarRental -BD:\VisualStudio\CMAKE\CMAKE-CarRental\out\build"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build CMAKE-CarRental/rebuild_cache: phony CMAKE-CarRental/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
 build CAR_RENTAL_TUTORIAL: phony CAR_RENTAL_TUTORIAL.exe
+
+build cars: phony CMAKE-CarRental/cars
 
 # =============================================================================
 # Folder targets.
@@ -113,7 +163,14 @@ build CAR_RENTAL_TUTORIAL: phony CAR_RENTAL_TUTORIAL.exe
 #############################################
 # Folder: D:/VisualStudio/CMAKE/CMAKE-CarRental/out/build
 
-build all: phony CAR_RENTAL_TUTORIAL.exe
+build all: phony CAR_RENTAL_TUTORIAL.exe CMAKE-CarRental/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/VisualStudio/CMAKE/CMAKE-CarRental/out/build/CMAKE-CarRental
+
+build CMAKE-CarRental/all: phony CMAKE-CarRental/cars
 
 # =============================================================================
 # Built-in targets
@@ -122,14 +179,14 @@ build all: phony CAR_RENTAL_TUTORIAL.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/Car.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/CMakeLists.txt D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/Car.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMakeLists.txt: phony
+build C$:/msys64/mingw64/share/cmake/Modules/CMakeCXXInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeCommonLanguageInclude.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeGenericSystem.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeInitializeConfigs.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeLanguageInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeRCInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInformation.cmake C$:/msys64/mingw64/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Compiler/GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU-CXX.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-GNU.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows-windres.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/Windows.cmake C$:/msys64/mingw64/share/cmake/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeRCCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMAKE-CarRental/CMakeLists.txt D$:/VisualStudio/CMAKE/CMAKE-CarRental/CMakeLists.txt: phony
 
 
 #############################################
